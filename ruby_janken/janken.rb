@@ -1,7 +1,14 @@
-def janken_count
+require 'debug'
+
+def janken
+
   puts "何本勝負？(press 1 or 3 or 5)"
   t = gets.to_i
   puts "#{t}本勝負"
+
+  @drew = 0
+  @win = 0
+  @lose = 0
 
 
   t.times do
@@ -24,22 +31,31 @@ def janken_count
 
     if player == cpu
       puts "あいこ"
-      drew += 1
+      @drew += 1
     elsif player == 0 && cpu == 1
       puts "勝ち"
-      win += 1
+      @win += 1
     else
       puts "負け"
-      lose += 1
+      @lose += 1
     end
 
+    puts "#{@win}勝#{@lose}敗"
   end
   
-  if win == lose
-    puts "結果：#{win}勝#{lose}敗で引き分け"
-  elsif win > lose
-    puts "結果：#{win}勝#{lose}敗で勝ち"
+  
+end
+
+def kekka
+  if @win == @lose
+    puts "結果：#{@win}勝#{@lose}敗で引き分け"
+  elsif @win > @lose
+    puts "結果：#{@win}勝#{@lose}敗で勝ち"
   else
-    puts "結果：#{win}勝#{lose}敗で負け"
+    puts "結果：#{@win}勝#{@lose}敗で負け"
   end
 end
+
+janken
+
+kekka
