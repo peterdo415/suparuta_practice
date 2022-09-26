@@ -12,6 +12,7 @@
   * id :integer
   * title :string
   * content :string
+  * solved :boolean
   * user_id :integer
   * created_at :datetime(6)
   * update_at :datetime(6)
