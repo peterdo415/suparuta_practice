@@ -1,0 +1,27 @@
+* users
+  * id :integer
+  * name :string
+  * email :string
+  * password_digest :string
+  * activated :boolean
+  * admin :boolean
+  * created_at :datetime(6)
+  * update_at :datetime(6)
+
+* questions
+  * id :integer
+  * title :string
+  * content :string
+  * solved :boolean
+  * user_id :integer
+  * created_at :datetime(6)
+  * update_at :datetime(6)
+
+* answers
+  * id :integer
+  * content :string
+  * user_id :integer
+  * question_id :integer
+  * created_at :datetime(6)
+  * update_at :datetime(6)
+
